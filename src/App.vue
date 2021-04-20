@@ -1,32 +1,51 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div >
+      <component :is="layout"></component>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+const frontend = 'frontend'
+export default {
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+  computed:{
+    layout(){
+      return (this.$route.meta.layout || frontend)+'-layout'
+    }
+  }
+};
+</script>
+<style >
+/* @import url("/assets/css/atlantis.min.css"); */
+/* @import url("./assets/css/nh.css"); */
+
+.a_link{
+    cursor: pointer;
+    text-decoration: none ;
+}
+/* .router-link-active{
+	opacity: 1;
+    color: #0168fa;
+    font-weight: 500;
+}
+.router-link-exact-active{
+	opacity: 1;
+    color: #0168fa;
+    font-weight: 500;
+} */
+/* .theme--light {
+    background: #0168fa !important;
+    color: rgba(0, 0, 0, 0.87);
+} */
+.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: rgba(0, 0, 0, 0.87) !important;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.mycontainer{
+  width:100% !important;
 }
 </style>
