@@ -8,6 +8,12 @@
           <nav-list :data=" { icon: 'mdi-home', text: 'Dashboard',link:'home' }"></nav-list>
 
           <nav-list :data=" { icon: 'mdi-people', text: 'Students',link:'students' }"></nav-list>
+
+          <nav-list :data=" { icon: 'mdi-people', text: 'Courses',link:'courses' }"></nav-list>
+          
+          <nav-list :data=" { icon: 'mdi-people', text: 'Payment',link:'payment' }"></nav-list>
+          
+          <nav-list :data=" { icon: 'mdi-people', text: 'Assessment',link:'assessment' }"></nav-list>
           
          
 
