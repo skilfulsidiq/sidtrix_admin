@@ -1,8 +1,8 @@
-<template>
-    <h1>Payment</h1>
-</template>
-<script>
-export default {
-    name:"PaymentList"
+
+<style scoped>
+header{
+    box-shadow: none ! important;
+    z-index: 3;
+    top: -50px;
 }
-</script>
+</style>
