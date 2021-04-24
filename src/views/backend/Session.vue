@@ -6,13 +6,13 @@
     ></v-breadcrumbs>
     <page-title   title="Session"/>
     <v-card>
-          <!-- <v-card-title>
+          <v-card-title>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
-                > <v-icon>mdi-plus</v-icon> Course    </v-btn>
-          </v-card-title> -->
+                > <v-icon>mdi-plus</v-icon> Session    </v-btn>
+          </v-card-title>
               <v-col cols="12" md="6">
                    <v-text-field
                 v-model="search"
@@ -33,15 +33,15 @@
                 
                     <template v-slot:item.action="{ item }">
                             <v-btn icon > <v-icon color="primary">mdi-check</v-icon> </v-btn>
-                            <v-btn icon > <v-icon color="green">mdi-pencil</v-icon> </v-btn>
-                            <v-btn icon > <v-icon color="red">mdi-delete</v-icon> </v-btn>
+                            <v-btn icon > <v-icon color="green" @click="dialog = !dialog">mdi-pencil</v-icon> </v-btn>
+                            <v-btn icon > <v-icon color="red" @click="Showdialog = !Showdialog">mdi-delete</v-icon> </v-btn>
                     </template>
                 </v-data-table>
           </v-card-text>
     </v-card>
 
 
-      <!-- dialog
+      dialog
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"
@@ -144,7 +144,61 @@
                 </v-card-actions>
             </v-card>
             </v-dialog>
-        </v-row> -->
+        </v-row>
+         <v-dialog
+          v-model="dialog"
+          max-width="500px"
+        >
+          <v-card >
+            <v-card-text>
+              <v-text-field label="Student name"></v-text-field>
+
+              <small class="grey--text">* Are you sure you want to add.</small>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn
+                text
+                color="primary"
+                @click="dialog = false"
+              >
+                Add
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+        <v-dialog
+          v-model="Showdialog"
+          max-width="500px"
+        >
+          <v-card >
+            <v-card-text>
+              <v-text-field label="Student name"></v-text-field>
+
+              <small class="grey--text">* Are you sure you want to delete.</small>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                text
+                color="primary"
+                @click="Showdialog = false"
+              >
+                No
+              </v-btn>
+              <v-btn
+                text
+                color="primary"
+                @click="Showdialog = false"
+              >
+                yes
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
 </div>
       
 
@@ -156,6 +210,8 @@ export default {
     name:"Session",
      data () {
       return {
+        dialog: false,
+        Showdialog: false,
           breadcrumb:[
               {
           text: 'Dashboard',
