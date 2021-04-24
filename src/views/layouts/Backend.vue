@@ -15,7 +15,13 @@
           
           <nav-list :data=" { icon: 'mdi-people', text: 'Assessment',link:'assessment' }"></nav-list>
           <nav-list :data=" { icon: 'mdi-people', text: 'Attendance',link:'attendance' }"></nav-list>
-          <nav-list :data=" { icon: 'mdi-people', text: 'Course',link:'coursemgt' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'Courses',link:'course' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'Assesment',link:'assesment' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'AssesmentType',link:'assesmentType' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'Payment',link:'payment' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'Question',link:'question' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'Session',link:'session' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'Training',link:'training' }"></nav-list>
           
          
 

@@ -4,15 +4,15 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Course Mgt"/>
+    <page-title   title="Assesment Type"/>
     <v-card>
-          <v-card-title>
+          <!-- <v-card-title>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
                 > <v-icon>mdi-plus</v-icon> Course    </v-btn>
-          </v-card-title>
+          </v-card-title> -->
               <v-col cols="12" md="6">
                    <v-text-field
                 v-model="search"
@@ -41,7 +41,7 @@
     </v-card>
 
 
-      <!-- dialog -->
+      <!-- dialog
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"
@@ -144,7 +144,7 @@
                 </v-card-actions>
             </v-card>
             </v-dialog>
-        </v-row>
+        </v-row> -->
 </div>
       
 
@@ -153,7 +153,7 @@
 import PageTitle from '../../components/general/PageTitle.vue'
 export default {
   components: { PageTitle },
-    name:"StudentList",
+    name:"AssesmentType",
      data () {
       return {
           breadcrumb:[
@@ -163,7 +163,7 @@ export default {
           href: 'breadcrumbs_dashboard',
         },
         {
-          text: 'Cousre Mgt',
+          text: 'Assesment Type',
           disabled: false,
           href: 'breadcrumbs_link_1',
         },
@@ -177,40 +177,25 @@ export default {
           add_student_modal:false,
         headers: [
           {
-            text: 'Course Name',
+            text: 'Name',
             align: 'start',
             sortable: false,
             value: 'name',
           },
-          { text: 'Course Duration', value: 'course_duration' },
-          { text: 'Total Topics', value: 'total_topics' },
-          { text: 'Status', value: 'status' },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
             name: 'HTML',
-            course_duration: '5 weeks',
-            total_topics: 12,
-            status: 'Average',
           },
-             {
+            {
             name: 'CSS',
-            course_duration: '10 weeks',
-            total_topics: 32,
-            status: 'Average',
           },
             {
             name: 'BOOTSTRAP',
-            course_duration: '5 weeks',
-            total_topics: 12,
-            status: 'Average',
           },
              {
             name: 'JAVASCRIPT',
-            course_duration: '12 weeks',
-            total_topics: 42,
-            status: 'Average',
           },
         ],
       }

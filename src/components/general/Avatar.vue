@@ -1,7 +1,6 @@
 <template >
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-       
         <v-avatar
             color="primary"
             size="40"

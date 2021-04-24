@@ -49,13 +49,62 @@ const backend_routes = [
     component:() => import("../views/backend/AttendanceList.vue")
   },
   {
-    path: "/coursemgt",
-    name: "coursemgt",
+    path: "/courses",
+    name: "course",
     meta: {
       layout: "backend"
     },
-    component:() => import("../views/backend/CourseMgt.vue")
+    component:() => import("../views/backend/Courses.vue")
   },
+  {
+    path: "/assesment",
+    name: "assesment",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/Assesment.vue")
+  },
+  {
+    path: "/assesmentType",
+    name: "assesmentType",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/AssesmentType.vue")
+  },
+  {
+    path: "/payment",
+    name: "payment",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/Payment.vue")
+  },
+  {
+    path: "/question",
+    name: "question",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/Question.vue")
+  },
+  {
+    path: "/session",
+    name: "session",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/Session.vue")
+  },
+  {
+    path: "/training",
+    name: "training",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/Training.vue")
+  },
+  
   // {
   //   path: "/all-properties",
   //   name: "all-properties",
