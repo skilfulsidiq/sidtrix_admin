@@ -4,14 +4,14 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Students"/>
+    <page-title   title="Course Mgt"/>
     <v-card>
           <v-card-title>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
-                > <v-icon>mdi-plus</v-icon> Student    </v-btn>
+                > <v-icon>mdi-plus</v-icon> Course    </v-btn>
           </v-card-title>
               <v-col cols="12" md="6">
                    <v-text-field
@@ -51,7 +51,7 @@
             
             <v-card>
                 <v-card-title>
-                <span class="headline">Add Student</span>
+                <span class="headline">Add Course</span>
                 </v-card-title>
                 <v-card-text>
                 <v-container>
@@ -61,7 +61,7 @@
                         md="6"
                     >
                         <v-text-field outlined
-                        label="First name*"
+                        label="Add Course*"
                         required
                         ></v-text-field>
                     </v-col>
@@ -71,8 +71,8 @@
                         md="6"
                     >
                         <v-text-field outlined
-                        label="Last name"
-                        hint="last name"
+                        label="Course Duration"
+                        hint="1 to 12 weeks"
                         ></v-text-field>
                     </v-col>
                     <v-col
@@ -81,22 +81,22 @@
                         md="6"
                     >
                         <v-text-field outlined
-                        label="Student number*"
-                        hint="Student ID"
+                        label="Total topics*"
+                        hint="3 to 12"
                         persistent-hint
                         required
                         ></v-text-field>
                     </v-col>
                     <v-col cols="12" md="6">
                         <v-text-field outlined
-                        label="Email*"
+                        label="Status*"
                         required
                         ></v-text-field>
                     </v-col>
                     <v-col cols="12" md="6">
                         <v-text-field outlined
-                        label="Phone number*"
-                        type="phone number"
+                        label="Password*"
+                        type="password"
                         required
                         ></v-text-field>
                     </v-col>
@@ -110,22 +110,12 @@
                         required
                         ></v-select>
                     </v-col>
-                      <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-select outlined
-                        :items="['check','Pencil','Delet']"
-                        label="Action*"
-                        required
-                        ></v-select>
-                    </v-col>
                     <v-col
                         cols="12"
                         md="6"
                     >
                         <v-autocomplete outlined
-                        :items="['Frontend', 'Backend', 'Mobile developer', 'Cloud', 'Cloud Engineer', 'Python', 'Babel', 'Java']"
+                        :items="['JAVASCRIPT', 'CSS', 'BOOTSTRAP', 'TAILWIN', 'GIT', 'HTML', 'VUE', 'REACT']"
                         label="Interests"
                         multiple
                         ></v-autocomplete>
@@ -173,7 +163,7 @@ export default {
           href: 'breadcrumbs_dashboard',
         },
         {
-          text: 'Students Mgt',
+          text: 'Cousre Mgt',
           disabled: false,
           href: 'breadcrumbs_link_1',
         },
@@ -187,50 +177,40 @@ export default {
           add_student_modal:false,
         headers: [
           {
-            text: 'First Name',
+            text: 'Course Name',
             align: 'start',
             sortable: false,
             value: 'name',
           },
-          { text: 'Last Name', value: 'last_name' },
-          { text: 'Student Number', value: 'Student_number' },
-          { text: 'Email', value: 'email' },
-          { text: 'Phone Number', value: 'phone_number' },
-          { text: 'Age', value: 'age' },
+          { text: 'Course Duration', value: 'course_duration' },
+          { text: 'Total Topics', value: 'total_topics' },
+          { text: 'Status', value: 'status' },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
-            name: 'Tajudeen',
-            Student_number: 159,
-            last_name: 'wasiu',
-            email: 'wassuccess@ymail.com',
-            phone_number: 8129319138,
-            age:28,
+            name: 'HTML',
+            course_duration: '5 weeks',
+            total_topics: 12,
+            status: 'Average',
           },
-           {
-            name: 'Afolabi',
-            Student_number: 159,
-            last_name: 'AbdulRahmon',
-            email: 'wassuccess@ymail.com',
-            phone_number: 8129319138,
-            age:28,
+             {
+            name: 'CSS',
+            course_duration: '10 weeks',
+            total_topics: 32,
+            status: 'Average',
           },
-          {
-            name: 'Jimoh',
-            Student_number: 159,
-            last_name: 'Abdullahi',
-            email: 'wassuccess@ymail.com',
-            phone_number: 8129319138,
-            age:28,
+            {
+            name: 'BOOTSTRAP',
+            course_duration: '5 weeks',
+            total_topics: 12,
+            status: 'Average',
           },
-           {
-            name: 'Ishola',
-            Student_number: 159,
-            last_name: 'Ayinde',
-            email: 'wassuccess@ymail.com',
-            phone_number: 8129319138,
-            age:28,
+             {
+            name: 'JAVASCRIPT',
+            course_duration: '12 weeks',
+            total_topics: 42,
+            status: 'Average',
           },
         ],
       }

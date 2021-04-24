@@ -14,6 +14,8 @@
           <nav-list :data=" { icon: 'mdi-people', text: 'Payment',link:'payment' }"></nav-list>
           
           <nav-list :data=" { icon: 'mdi-people', text: 'Assessment',link:'assessment' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'Attendance',link:'attendance' }"></nav-list>
+          <nav-list :data=" { icon: 'mdi-people', text: 'Course',link:'coursemgt' }"></nav-list>
           
          
 
@@ -50,24 +52,8 @@
       </v-toolbar-title>
           <!-- </div> -->
         <!-- <v-spacer></v-spacer> -->
-          <v-menu bottom origin="center center" transition="scale-transition" class="profile_icon">
-          <template v-slot:activator="{ on }">
-            {{user.name}}
-            <v-btn icon v-on="on" outlined class="mr-5 ml-5" >
-            <v-icon size="30">mdi-account</v-icon>
-            </v-btn>
-          </template>
-
-          <v-list>
-            <v-list-item
-              v-for="(item, i) in user_menu"
-              :key="i"
-              @click="user_menu_action(item.link)"
-            >
-              <v-list-item-title ><v-icon >{{item.icon}}</v-icon> {{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-    </v-menu>
+        <avatar />
+          
       </template>
         <!-- <v-img alt="Newhomes" class="shrink mr-2"  contain  src="../../assets/logo.png" width="100px" height="20px" /> -->
           <!-- <v-spacer /> -->
@@ -81,14 +67,12 @@
      
 
     </v-app-bar>
-    <v-content>
-      <!-- <v-container
-        class="fill-height"
-        fluid
-      > -->
+    <v-main>
+       <v-container
+      > 
         <router-view></router-view>
-      <!-- </v-container> -->
-    </v-content>
+      </v-container> 
+    </v-main>
    
     <v-dialog
       v-model="dialog"
