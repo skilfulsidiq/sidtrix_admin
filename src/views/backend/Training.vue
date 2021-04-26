@@ -56,13 +56,35 @@
                 <v-card-text>
                 <v-container>
                     <v-row>
+                       <v-col
+                        cols="12"
+                        sm="6"
+                        md="6"
+                    >
+                        <v-text-field outlined
+                        :items="['Active', 'Inactive']"
+                        label="School Session"
+                        required
+                        ></v-text-field>
+                    </v-col>
+                       <v-col
+                        cols="12"
+                        sm="6"
+                        md="6"
+                    >
+                        <v-text-field outlined
+                        :items="['Active', 'Inactive']"
+                        label="Status"
+                        required
+                        ></v-text-field>
+                    </v-col>
                     <v-col
                         cols="12"
                         md="6"
                     >
                        <v-text-field outlined
-                       type="number"
-                        label="Duration*"
+                       
+                        label="Training Name*"
                         required
                         ></v-text-field>
                     </v-col>
@@ -72,7 +94,37 @@
                     >
                        <v-text-field outlined
                        type="number"
-                        label="Pass Score*"
+                        label="Days*"
+                        required
+                        ></v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="12"
+                        md="6"
+                    >
+                       <v-text-field outlined
+                       type="number"
+                        label="Weeks*"
+                        required
+                        ></v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="12"
+                        md="6"
+                    >
+                       <v-text-field outlined
+                       type="number"
+                        label="Hours*"
+                        required
+                        ></v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="12"
+                        md="6"
+                    >
+                       <v-text-field outlined
+                       type="number"
+                        label="Total Students*"
                         required
                         ></v-text-field>
                     </v-col>
@@ -109,7 +161,7 @@
             <v-card-text>
               <v-text-field label="Student name"></v-text-field>
 
-              <small class="grey--text">* Are you sure you want to add.</small>
+              <big class="grey--text"><strong>* Are you sure you want to add.</strong></big>
             </v-card-text>
 
             <v-card-actions>
@@ -133,7 +185,7 @@
             <v-card-text>
               <v-text-field label="Student name"></v-text-field>
 
-              <small class="grey--text">* Are you sure you want to delete.</small>
+              <big class="grey--text"><strong>* Are you sure you want to delete.</strong></big>
             </v-card-text>
 
             <v-card-actions>

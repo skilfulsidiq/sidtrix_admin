@@ -71,6 +71,16 @@
                         md="6"
                     >
                         <v-select outlined
+                        :items="['Active', 'Inactive',]"
+                        label="Status*"
+                        required
+                        ></v-select>
+                    </v-col>
+                    <v-col
+                        cols="12"
+                        md="6"
+                    >
+                        <v-select outlined
                         :items="['HTML', 'CSS', 'javascript',]"
                         label="Course*"
                         required
@@ -129,7 +139,7 @@
             <v-card-text>
               <v-text-field label="Student name"></v-text-field>
 
-              <small class="grey--text">* Are you sure you want to add.</small>
+              <big class="grey--text"><strong>* Are you sure you want to add.</strong></big>
             </v-card-text>
 
             <v-card-actions>
@@ -153,7 +163,7 @@
             <v-card-text>
               <v-text-field label="Student name"></v-text-field>
 
-              <small class="grey--text">* Are you sure you want to delete.</small>
+              <big class="grey--text"><strong>* Are you sure you want to delete.</strong></big>
             </v-card-text>
 
             <v-card-actions>
