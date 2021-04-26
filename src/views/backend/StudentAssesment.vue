@@ -4,7 +4,7 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Assesment Type"/>
+    <page-title   title="Student Assesment"/>
     <v-card>
           <!-- <v-card-title>
               <v-spacer></v-spacer>
@@ -153,7 +153,7 @@
 import PageTitle from '../../components/general/PageTitle.vue'
 export default {
   components: { PageTitle },
-    name:"AssesmentType",
+    name:"Student Assesment",
      data () {
       return {
           breadcrumb:[
@@ -182,25 +182,37 @@ export default {
             sortable: false,
             value: 'name',
           },
-          { text: 'Session Name',value:"session_name" },
+          { text: 'Assesment',value:"assesment" },
+          { text: 'Student Id',value:"student_id" },
+          { text: 'Student Name',value:"student_name" },
+          { text: 'Status',value:"status" },
+          { text: 'Score',value:"score" },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
             name: '1',
-            session_name:"HTML"
+            assesment: 'HTML',
+            student_id: '1234',
+            student_name: 'Ishola',
+            status: 'Average',
+            score: '60%',
           },
             {
             name: '2',
-            session_name:"CSS"
+            assesment: 'CSS',
+            student_id: '1514',
+            student_name: 'Adeola',
+            status: 'Average',
+            score: '60%',
           },
             {
             name: '3',
-            session_name:"BOOTSTRAP"
-          },
-             {
-           name: '4',
-            session_name:"JAVASCRIP"
+            assesment: 'JAVASCRIPT',
+            student_id: '1784',
+            student_name: 'Jimoh',
+            status: 'Average',
+            score: '40%',
           },
         ],
       }

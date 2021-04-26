@@ -40,8 +40,6 @@
           </v-card-text>
     </v-card>
 
-
-      dialog
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"
@@ -253,7 +251,7 @@ export default {
             status: 'Average',
           },
              {
-            name: '1',
+            name: '2',
             session_name: 'Frontend',
             year: 2021,
             batch: 'First',

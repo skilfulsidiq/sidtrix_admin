@@ -4,7 +4,7 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Assesment Type"/>
+    <page-title   title="Topic"/>
     <v-card>
           <!-- <v-card-title>
               <v-spacer></v-spacer>
@@ -153,7 +153,7 @@
 import PageTitle from '../../components/general/PageTitle.vue'
 export default {
   components: { PageTitle },
-    name:"AssesmentType",
+    name:"Topic",
      data () {
       return {
           breadcrumb:[
@@ -182,25 +182,29 @@ export default {
             sortable: false,
             value: 'name',
           },
-          { text: 'Session Name',value:"session_name" },
+          { text: 'Course',value:"course" },
+          { text: 'Topic Name',value:"topic_name" },
+          { text: 'Status',value:"status" },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
             name: '1',
-            session_name:"HTML"
+            course: 'HTML',
+            topic_name: 'Page Structure',
+            status: 'Average',
           },
             {
             name: '2',
-            session_name:"CSS"
+            course: 'CSS',
+            topic_name: 'Background Color',
+            status: 'Average',
           },
             {
-            name: '3',
-            session_name:"BOOTSTRAP"
-          },
-             {
-           name: '4',
-            session_name:"JAVASCRIP"
+             name: '3',
+            course: 'JAVASCRIPT',
+            topic_name: 'Array',
+            status: 'Average',
           },
         ],
       }

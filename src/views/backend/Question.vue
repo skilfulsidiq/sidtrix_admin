@@ -39,9 +39,7 @@
                 </v-data-table>
           </v-card-text>
     </v-card>
-
-
-      dialog
+    
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"

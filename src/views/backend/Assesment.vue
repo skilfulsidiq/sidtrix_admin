@@ -40,8 +40,6 @@
           </v-card-text>
     </v-card>
 
-
-      dialog
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"
@@ -175,7 +173,7 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
-</div>
+   </div>
       
 
 </template>

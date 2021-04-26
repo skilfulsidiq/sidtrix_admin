@@ -13,6 +13,99 @@
                 color="primary"
                 > <v-icon>mdi-plus</v-icon> Course    </v-btn>
           </v-card-title> -->
+              <div class="container">
+                        <v-card-title>
+                        <v-spacer></v-spacer>
+                            <v-btn
+                            color="primary"
+                            elevation="2"
+                            @click="openDialog()"
+                            >
+                            <v-icon>mdi-plus</v-icon>Open Dialog
+                            </v-btn>
+                        </v-card-title>
+                        <v-col cols="12" md="6">
+                        <!-- <v-text-field
+                        append-icon="mdi-magnify"
+                        hide-details
+                        ></v-text-field> -->
+                        </v-col>
+                    <!----------dialog--------------->
+                        <v-row justify="center">
+                        <v-dialog 
+                        v-model="dialog"
+                        persistent
+                        width="800px"
+                        >
+                        <v-card>
+                        <v-card-title>
+                            <span class="headline">Open Dialog</span>
+                        </v-card-title>
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn
+                                color="blue darken-1"
+                                text
+                                @click="dialog = false"
+                            >
+                                Close
+                            </v-btn>
+                        </v-card-actions>
+                        <v-card-text>
+                            <v-container>
+                            <v-row>
+                                <v-col 
+                                cols="12"
+                                md="6">
+                                    <v-text-field
+                                    label="Course Name*"
+                                    required
+                                    ></v-text-field>
+                                </v-col>
+                                <v-col
+                                    cols="12"
+                                    sm="6"
+                                    md="4"
+                                >
+                                    <v-text-field
+                                    label="Course Duration"
+                                    hint="example of helper text only on focus"
+                                    ></v-text-field>
+                                </v-col>
+                                <v-col cols="12">
+                                    <v-text-field
+                                    label="Total Topics*"
+                                    type="number"
+                                    required
+                                    ></v-text-field>
+                                </v-col>
+                                <v-col
+                                    cols="12"
+                                    sm="6"
+                                >
+                                    <v-select
+                                    :items="['0-17', '18-29', '30-54', '54+']"
+                                    label="Status*"
+                                    required
+                                    ></v-select>
+                                </v-col>
+                                </v-row>
+                            </v-container>
+                            </v-card-text>
+                            <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn
+                                color="blue darken-1"
+                                text
+                                @click="dialog = false"
+                            >
+                                Save
+                            </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                        </v-dialog>
+                    </v-row>
+              </div>   
               <v-col cols="12" md="6">
                    <v-text-field
                 v-model="search"
@@ -156,6 +249,7 @@ export default {
     name:"Courses",
      data () {
       return {
+          dialog: false,
           breadcrumb:[
               {
           text: 'Dashboard',
@@ -228,7 +322,10 @@ export default {
     methods:{
         openStudentModal(){
             this.add_student_modal = !this.showStudentModal
-        }
+        },
+         openDialog(){
+        this.dialog=true
+      }
     }
 }
 </script>
