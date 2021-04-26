@@ -34,10 +34,10 @@
           ></v-text-field> -->
          
       <v-spacer />
-      <v-spacer />
+      <!-- <v-spacer /> -->
       <template >
           <!-- <div class="padme_ho" style="border-right:1px solid #f2f2f2;"> -->
-              <v-toolbar-title
+      <v-toolbar-title
         style="width: 150px;border-right:1px solid #f2f2f2; text-align:center"
         class="ml-0 padme_ho"
       >
@@ -46,7 +46,7 @@
       </v-toolbar-title>
           <!-- </div> -->
         <!-- <v-spacer></v-spacer> -->
-        <avatar />
+        <avatar :menu="user_menu"/>
           
       </template>
         <!-- <v-img alt="Newhomes" class="shrink mr-2"  contain  src="../../assets/logo.png" width="100px" height="20px" /> -->
@@ -170,7 +170,7 @@ import {loadingMixin} from '../../mixins/Loading'
       drawer: null,
       sampe_img_link:'https://www.google.com/search?biw=1600&bih=718&tbm=isch&sxsrf=ACYBGNSiTf7T5CMkwbDOiLQbKcH6KQluyA%3A1579861007453&sa=1&ei=D8QqXoOpG6TuxgOHg5HICQ&q=firsttrust+logo+mortgage#',
         user_menu: [
-        { title: 'Profile',icon:'mdi-account',link:'profile' },
+        { title: 'Profile',icon:'mdi-account-tie-outline',link:'profile' },
         { title: 'Sign Out',icon:'mdi-logout',link:'logout' }
       ],
       navigation_menu: [

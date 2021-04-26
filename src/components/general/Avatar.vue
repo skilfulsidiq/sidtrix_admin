@@ -11,7 +11,7 @@
       <v-list>
         <v-list>
             <v-list-item
-              v-for="(item, i) in items"
+              v-for="(item, i) in menu"
               :key="i"
               @click="user_menu_action(item.link)"
             >
@@ -42,12 +42,11 @@
 <script>
 export default {
     name:"Avatar",
+    props:{
+      menu:{type:Array,required:true}
+    },
     data(){
         return{
-        items: [
-        { title: 'Profile',link:'#',icon:"mdi-user" },
-        { title: 'Logout',link:"logout", icon:"mdi-logout" },
-      ],
         }
     }
 }
