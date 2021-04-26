@@ -177,30 +177,31 @@ export default {
           add_student_modal:false,
         headers: [
           {
-            text: 'Name',
+            text: 'S/N',
             align: 'start',
             sortable: false,
             value: 'name',
           },
+          { text: 'Session Name', value: 'session_name' },
           { text: 'Year', value: 'year' },
+          { text: 'Batch', value: 'batch' },
+          { text: 'Status', value: 'status' },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
-            name: 'Aremu',
+            name: '1',
+            session_name: 'Frontend',
             year: 2021,
+            batch: 'First',
+            status: 'Average',
           },
              {
-            name: 'Jimoh',
-             year: 2020,
-          },
-            {
-            name: 'Idris',
-             year: 2010,
-          },
-             {
-            name: 'Ishola',
-              year: 2011,
+            name: '1',
+            session_name: 'Frontend',
+            year: 2021,
+            batch: 'First',
+            status: 'Average',
           },
         ],
       }

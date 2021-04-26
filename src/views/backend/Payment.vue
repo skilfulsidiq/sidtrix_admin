@@ -177,40 +177,34 @@ export default {
           add_student_modal:false,
         headers: [
           {
-            text: 'Depositor Name',
+            text: 'S/N',
             align: 'start',
             sortable: false,
             value: 'name',
           },
-          { text: 'Amount', value: 'amount' },
+          { text: 'User', value: 'user' },
           { text: 'Payment Date', value: 'payment_date' },
-          { text: 'Payment Ref', value: 'payment_ref' },
+          { text: 'Amount Due', value: 'amount_due' },
+          { text: 'Amount', value: 'amount' },
+          { text: 'Status', value: 'status' },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
-            name: 'Ishola',
-            amount: 50000,
+            name: '1',
+            user:"Ishola",
             payment_date: '12/4/2021',
-            payment_ref:'RRR 012-543-009'
+            amount_due: 30000,
+            amount: 50000,
+            status:"Average"
           },
               {
-            name: 'Idris',
-            amount: 40000,
-            payment_date: '8/4/2021',
-            payment_ref:'RRR 014-203-105'
-          },
-             {
-            name: 'Aremu',
-            amount: 50000,
-            payment_date: '2/4/2021',
-            payment_ref:'RRR 022-123-019'
-          },
-           {
-            name: 'Quadri',
+            name: '2',
+            user:"Idris",
+            payment_date: '11/4/2021',
+            amount_due: 20000,
             amount: 70000,
-            payment_date: '10/4/2021',
-            payment_ref:'RRR 010-243-009'
+            status:"Average"
           },
         ],
       }

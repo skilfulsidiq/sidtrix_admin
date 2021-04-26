@@ -15,12 +15,12 @@
                     <analytic-card color="purple" title="Total Value" value="45,788" icon="mdi-finance"/>
                 </v-col>
             </v-row>
-            <v-row>
+            <!-- <v-row>
                 <v-col cols="12" md="6">
                     <v-card>
                         <v-card-title></v-card-title>
                         <v-card-text>
-                              <!-- <bar-chart id="bar"
+                              <bar-chart id="bar"
                             :data="bardata"
                             xkey="year"
                             ykeys='[ "and", "ios", "win" ]'
@@ -28,12 +28,12 @@
                             grid="true"
                             grid-text-weight="bold"
                             resize="true">
-                            </bar-chart> -->
+                            </bar-chart>
                         </v-card-text>
                     </v-card>
                   
                 </v-col>
-            </v-row>
+            </v-row> -->
        
         </v-container>
     </div>
@@ -60,7 +60,7 @@ export default {
                     ],
                mortgage_headers:[
                 { text: 'Date', value: 'created_at' },
-                  { text: 'Type', value: 'type' },
+                { text: 'Type', value: 'type' },
                 {text: 'Ref No',align: 'left',sortable: false,value: 'app_ref' },
                 { text: 'Customer', value: 'firstname' },
                 { text: 'Loan Amount', value: 'loan_amount' },

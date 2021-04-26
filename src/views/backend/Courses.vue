@@ -177,11 +177,13 @@ export default {
           add_student_modal:false,
         headers: [
           {
-            text: 'Course Name',
+            text: 'S/N',
             align: 'start',
             sortable: false,
             value: 'name',
           },
+          { text: 'Course Name', value: 'course_name' },
+          { text: 'Course Instructors', value: 'course_instructor' },
           { text: 'Course Duration', value: 'course_duration' },
           { text: 'Total Topics', value: 'total_topics' },
           { text: 'Status', value: 'status' },
@@ -189,27 +191,35 @@ export default {
         ],
         desserts: [
           {
-            name: 'HTML',
+            name: '1',
+            course_name:"HTML",
+            course_instructor:"Wasmistic",
             course_duration: '5 weeks',
             total_topics: 12,
             status: 'Average',
           },
              {
-            name: 'CSS',
-            course_duration: '10 weeks',
-            total_topics: 32,
+            name: '2',
+            course_name:"CSS",
+            course_instructor:"Mr Abdul Azeez",
+            course_duration: '5 weeks',
+            total_topics: 12,
             status: 'Average',
           },
             {
-            name: 'BOOTSTRAP',
+            name: '3',
+            course_name:"BOOTSTRAP",
+            course_instructor:"Mr Abdul Azeez",
             course_duration: '5 weeks',
             total_topics: 12,
             status: 'Average',
           },
              {
-            name: 'JAVASCRIPT',
-            course_duration: '12 weeks',
-            total_topics: 42,
+            name: '4',
+            course_name:"JAVASCRIPT",
+            course_instructor:"Hundred Percent",
+            course_duration: '5 weeks',
+            total_topics: 12,
             status: 'Average',
           },
         ],
@@ -222,9 +232,4 @@ export default {
     }
 }
 </script>
-<style scoped>
-.btn{
-    position: absolute;
-    right: 0.35rem;
-}
-</style>
+
