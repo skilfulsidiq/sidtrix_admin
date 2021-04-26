@@ -4,7 +4,7 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Payment"/>
+    <page-title   title="Topic"/>
     <v-card>
           <!-- <v-card-title>
               <v-spacer></v-spacer>
@@ -153,7 +153,7 @@
 import PageTitle from '../../components/general/PageTitle.vue'
 export default {
   components: { PageTitle },
-    name:"Payment",
+    name:"Topic",
      data () {
       return {
           breadcrumb:[
@@ -163,7 +163,7 @@ export default {
           href: 'breadcrumbs_dashboard',
         },
         {
-          text: 'Payment',
+          text: 'Assesment Type',
           disabled: false,
           href: 'breadcrumbs_link_1',
         },
@@ -182,29 +182,29 @@ export default {
             sortable: false,
             value: 'name',
           },
-          { text: 'User', value: 'user' },
-          { text: 'Payment Date', value: 'payment_date' },
-          { text: 'Amount Due', value: 'amount_due' },
-          { text: 'Amount', value: 'amount' },
-          { text: 'Status', value: 'status' },
+          { text: 'Course',value:"course" },
+          { text: 'Topic Name',value:"topic_name" },
+          { text: 'Status',value:"status" },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
             name: '1',
-            user:"Ishola",
-            payment_date: '12/4/2021',
-            amount_due: 30000,
-            amount: 50000,
-            status:"Average"
+            course: 'HTML',
+            topic_name: 'Page Structure',
+            status: 'Average',
           },
-              {
+            {
             name: '2',
-            user:"Idris",
-            payment_date: '11/4/2021',
-            amount_due: 20000,
-            amount: 70000,
-            status:"Average"
+            course: 'CSS',
+            topic_name: 'Background Color',
+            status: 'Average',
+          },
+            {
+             name: '3',
+            course: 'JAVASCRIPT',
+            topic_name: 'Array',
+            status: 'Average',
           },
         ],
       }

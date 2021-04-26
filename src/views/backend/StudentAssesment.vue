@@ -4,7 +4,7 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Payment"/>
+    <page-title   title="Student Assesment"/>
     <v-card>
           <!-- <v-card-title>
               <v-spacer></v-spacer>
@@ -153,7 +153,7 @@
 import PageTitle from '../../components/general/PageTitle.vue'
 export default {
   components: { PageTitle },
-    name:"Payment",
+    name:"Student Assesment",
      data () {
       return {
           breadcrumb:[
@@ -163,7 +163,7 @@ export default {
           href: 'breadcrumbs_dashboard',
         },
         {
-          text: 'Payment',
+          text: 'Assesment Type',
           disabled: false,
           href: 'breadcrumbs_link_1',
         },
@@ -182,29 +182,37 @@ export default {
             sortable: false,
             value: 'name',
           },
-          { text: 'User', value: 'user' },
-          { text: 'Payment Date', value: 'payment_date' },
-          { text: 'Amount Due', value: 'amount_due' },
-          { text: 'Amount', value: 'amount' },
-          { text: 'Status', value: 'status' },
+          { text: 'Assesment',value:"assesment" },
+          { text: 'Student Id',value:"student_id" },
+          { text: 'Student Name',value:"student_name" },
+          { text: 'Status',value:"status" },
+          { text: 'Score',value:"score" },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
             name: '1',
-            user:"Ishola",
-            payment_date: '12/4/2021',
-            amount_due: 30000,
-            amount: 50000,
-            status:"Average"
+            assesment: 'HTML',
+            student_id: '1234',
+            student_name: 'Ishola',
+            status: 'Average',
+            score: '60%',
           },
-              {
+            {
             name: '2',
-            user:"Idris",
-            payment_date: '11/4/2021',
-            amount_due: 20000,
-            amount: 70000,
-            status:"Average"
+            assesment: 'CSS',
+            student_id: '1514',
+            student_name: 'Adeola',
+            status: 'Average',
+            score: '60%',
+          },
+            {
+            name: '3',
+            assesment: 'JAVASCRIPT',
+            student_id: '1784',
+            student_name: 'Jimoh',
+            status: 'Average',
+            score: '40%',
           },
         ],
       }

@@ -177,25 +177,30 @@ export default {
           add_student_modal:false,
         headers: [
           {
-            text: 'Name',
+            text: 'S/N',
             align: 'start',
             sortable: false,
             value: 'name',
           },
+          { text: 'Session Name',value:"session_name" },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
-            name: 'HTML',
+            name: '1',
+            session_name:"HTML"
           },
             {
-            name: 'CSS',
+            name: '2',
+            session_name:"CSS"
           },
             {
-            name: 'BOOTSTRAP',
+            name: '3',
+            session_name:"BOOTSTRAP"
           },
              {
-            name: 'JAVASCRIPT',
+           name: '4',
+            session_name:"JAVASCRIP"
           },
         ],
       }

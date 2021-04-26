@@ -4,26 +4,30 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Training"/>
-    <v-card>
+  
+    <v-card elevation="0">
           <v-card-title>
+              <!-- Training -->
+                <page-title   title="Training"/>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
                 > <v-icon>mdi-plus</v-icon> Training    </v-btn>
           </v-card-title>
-              <v-col cols="12" md="6">
-                   <v-text-field
+              <v-col cols="12" md="4">
+                   <v-text-field class="pl-5" dense
                 v-model="search"
                 append-icon="mdi-magnify"
                 label="Search"
+                outlined
                 single-line
                 hide-details
             ></v-text-field>
               </v-col>
-             
+
           <v-card-text>
+            <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"
@@ -40,8 +44,6 @@
           </v-card-text>
     </v-card>
 
-
-      dialog
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"
@@ -241,50 +243,60 @@ export default {
           add_student_modal:false,
         headers: [
           {
-            text: 'Training Name',
+            text: 'S/N',
             align: 'start',
             sortable: false,
             value: 'name',
           },
-          { text: 'Year', value: 'year' },
-          { text: 'Total Days', value: 'total_days'},
-          { text: 'Total Weeks', value: 'total_weeks' },
-          { text: 'Total Hours', value: 'total_hours' },
-          { text: 'Total Students', value: 'total_students' },
+          { text: 'School Session', value: 'school_session' },
+          { text: 'Training Name', value: 'training_name' },
+          { text: 'Days', value: 'days' },
+          { text: 'Weeks', value: 'weeks' },
+          { text: 'Hours', value: 'hours' },
+          { text: 'Total Student', value: 'total_student' },
+          { text: 'Status', value: 'status' },
           { text: 'Action',value:"action" },
         ],
         desserts: [
           {
-            name: 'Aremu',
-            year: 2020,
-            total_days: 80,
-            total_weeks: 12,
-            total_hours: 4,
-            total_students:3,
+            name: '1',
+            school_session: 2021,
+            training_name: "Frontend",
+            days: 80,
+            weeks: 12,
+            hours: 4,
+            total_student:3,
+            status: "Average",
           },
              {
-            name: 'Idris',
-            year: 2021,
-            total_days: 40,
-            total_weeks: 12,
-            total_hours: 8,
-            total_students:3,
+            name: '2',
+            school_session: 2021,
+            training_name: "Frontend",
+            days: 80,
+            weeks: 12,
+            hours: 4,
+            total_student:3,
+            status: "Average",
           },
             {
-            name: 'Ishola',
-            year: 2019,
-            total_days: 20,
-            total_weeks: 12,
-            total_hours: 6,
-            total_students:2,
+            name: '3',
+            school_session: 2021,
+            training_name: "Frontend",
+            days: 80,
+            weeks: 12,
+            hours: 4,
+            total_student:3,
+            status: "Average",
           },
              {
-            name: 'Jimoh',
-            year: 2021,
-            total_days: 50,
-            total_weeks: 12,
-            total_hours: 5,
-            total_students:3,
+            name: '4',
+            school_session: 2021,
+            training_name: "Frontend",
+            days: 80,
+            weeks: 12,
+            hours: 4,
+            total_student:3,
+            status: "Average",
           },
         ],
       }
