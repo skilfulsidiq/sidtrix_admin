@@ -18,6 +18,29 @@ const backend_routes = [
     component:() => import("../views/backend/StudentList.vue")
   },
   {
+    path: "/courses",
+    name: "courses",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/CourseList.vue")
+  },
+  {
+    path: "/payment",
+    name: "payment",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/PaymentList.vue")
+  },
+  {
+    path: "/assessment",
+    name: "assessment",
+    meta: {
+      layout: "backend"
+    },
+    component:() => import("../views/backend/AssessmentList.vue")
+  },{
     path: "/attendance",
     name: "attendance",
     meta: {

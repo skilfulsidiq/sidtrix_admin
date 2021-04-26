@@ -6,13 +6,13 @@
     ></v-breadcrumbs>
     <page-title   title="Question"/>
     <v-card>
-          <!-- <v-card-title>
+          <v-card-title>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
-                > <v-icon>mdi-plus</v-icon> Course    </v-btn>
-          </v-card-title> -->
+                > <v-icon>mdi-plus</v-icon> Question</v-btn>
+          </v-card-title>
               <v-col cols="12" md="6">
                    <v-text-field
                 v-model="search"
@@ -33,15 +33,15 @@
                 
                     <template v-slot:item.action="{ item }">
                             <v-btn icon > <v-icon color="primary">mdi-check</v-icon> </v-btn>
-                            <v-btn icon > <v-icon color="green">mdi-pencil</v-icon> </v-btn>
-                            <v-btn icon > <v-icon color="red">mdi-delete</v-icon> </v-btn>
+                            <v-btn icon > <v-icon color="green"  @click="dialog = !dialog">mdi-pencil</v-icon> </v-btn>
+                            <v-btn icon > <v-icon color="red"  @click="Showdialog = !Showdialog">mdi-delete</v-icon> </v-btn>
                     </template>
                 </v-data-table>
           </v-card-text>
     </v-card>
 
 
-      <!-- dialog
+      dialog
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"
@@ -51,7 +51,7 @@
             
             <v-card>
                 <v-card-title>
-                <span class="headline">Add Course</span>
+                <span class="headline">Question Form</span>
                 </v-card-title>
                 <v-card-text>
                 <v-container>
@@ -61,65 +61,45 @@
                         md="6"
                     >
                         <v-text-field outlined
-                        label="Add Course*"
+                        label="Question*"
                         required
                         ></v-text-field>
                     </v-col>
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        label="Course Duration"
-                        hint="1 to 12 weeks"
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        label="Total topics*"
-                        hint="3 to 12"
-                        persistent-hint
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Status*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Password*"
-                        type="password"
-                        required
-                        ></v-text-field>
-                    </v-col>
+                   
                     <v-col
                         cols="12"
                         md="6"
                     >
                         <v-select outlined
-                        :items="['0-17', '18-29', '30-54', '54+']"
-                        label="Age*"
+                        :items="['1', '2', '3', '4']"
+                        label="Number Of Options*"
                         required
                         ></v-select>
                     </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-autocomplete outlined
-                        :items="['JAVASCRIPT', 'CSS', 'BOOTSTRAP', 'TAILWIN', 'GIT', 'HTML', 'VUE', 'REACT']"
-                        label="Interests"
-                        multiple
-                        ></v-autocomplete>
-                    </v-col>
+                    <v-container fluid>
+                        <p>{{ radios || 'null' }}</p>
+                        <v-radio-group
+                        v-model="radios"
+                        mandatory
+                        >
+                        <v-radio
+                            label="Radio 1"
+                            value="radio-1"
+                        ></v-radio>
+                        <v-radio
+                            label="Radio 2"
+                            value="radio-2"
+                        ></v-radio>
+                        <v-radio
+                            label="Radio 3"
+                            value="radio-3"
+                        ></v-radio>
+                        <v-radio
+                            label="Radio 4"
+                            value="radio-4"
+                        ></v-radio>
+                        </v-radio-group>
+                    </v-container>
                     </v-row>
                 </v-container>
                 </v-card-text>
@@ -144,7 +124,61 @@
                 </v-card-actions>
             </v-card>
             </v-dialog>
-        </v-row> -->
+        </v-row>
+         <v-dialog
+          v-model="dialog"
+          max-width="500px"
+        >
+          <v-card >
+            <v-card-text>
+              <v-text-field label="Question number"></v-text-field>
+
+              <small class="grey--text">* Are you sure you want to add.</small>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn
+                text
+                color="primary"
+                @click="dialog = false"
+              >
+                Add
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+        <v-dialog
+          v-model="Showdialog"
+          max-width="500px"
+        >
+          <v-card >
+            <v-card-text>
+              <v-text-field label="Question number"></v-text-field>
+
+              <small class="grey--text">* Are you sure you want to delete.</small>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                text
+                color="primary"
+                @click="Showdialog = false"
+              >
+                No
+              </v-btn>
+              <v-btn
+                text
+                color="primary"
+                @click="Showdialog = false"
+              >
+                yes
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
 </div>
       
 
@@ -156,6 +190,9 @@ export default {
     name:"Question",
      data () {
       return {
+           dialog: false,
+            Showdialog: false,
+          radios: null,
           breadcrumb:[
               {
           text: 'Dashboard',
