@@ -16,7 +16,8 @@
           </v-card-title>
               
               <v-col cols="12" md="4">
-                   <v-text-field dense class="pl-5" outlined
+                   <v-text-field dense class="pl-5"
+                outlined
                 v-model="search"
                 append-icon="mdi-magnify"
                 label="Search"
@@ -26,6 +27,7 @@
               </v-col>
              
           <v-card-text>
+            <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"
@@ -126,7 +128,7 @@
             </v-card>
             </v-dialog>
         </v-row>
-         <v-dialog
+         <!-- <v-dialog
           v-model="dialog"
           max-width="500px"
         >
@@ -179,7 +181,7 @@
               </v-btn>
             </v-card-actions>
           </v-card>
-        </v-dialog>
+        </v-dialog> -->
 </div>
       
 

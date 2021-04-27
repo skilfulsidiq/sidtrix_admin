@@ -4,23 +4,21 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-  
-    <v-card elevation="0">
+    <v-card>
           <v-card-title>
-              <!-- Training -->
-                <page-title   title="Training"/>
+             <page-title   title="Training"/>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
-                elevation="2"
+                elevation="0"
                 color="primary"
-                > <v-icon>mdi-plus</v-icon> Training    </v-btn>
+                > <v-icon>mdi-plus</v-icon> Training </v-btn>
           </v-card-title>
-              <v-col cols="12" md="4">
-                   <v-text-field class="pl-5" dense
+              <v-col cols="12" md="6">
+                   <v-text-field
+                outlined
                 v-model="search"
                 append-icon="mdi-magnify"
                 label="Search"
-                outlined
                 single-line
                 hide-details
             ></v-text-field>
@@ -229,7 +227,7 @@ export default {
           href: 'breadcrumbs_dashboard',
         },
         {
-          text: 'Course Mgt',
+          text: 'Training',
           disabled: false,
           href: 'breadcrumbs_link_1',
         },

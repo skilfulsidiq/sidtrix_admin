@@ -4,8 +4,8 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Assesment Type"/>
     <v-card>
+       <page-title   title="Assesment Type"/>
           <!-- <v-card-title>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
@@ -15,6 +15,7 @@
           </v-card-title> -->
               <v-col cols="12" md="6">
                    <v-text-field
+                outlined
                 v-model="search"
                 append-icon="mdi-magnify"
                 label="Search"
@@ -24,6 +25,7 @@
               </v-col>
              
           <v-card-text>
+             <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"
@@ -212,9 +214,4 @@ export default {
     }
 }
 </script>
-<style scoped>
-.btn{
-    position: absolute;
-    right: 0.35rem;
-}
-</style>
+

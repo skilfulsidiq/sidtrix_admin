@@ -4,8 +4,8 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Payment"/>
     <v-card>
+         <page-title   title="Payment"/>
           <!-- <v-card-title>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
@@ -20,10 +20,12 @@
                 label="Search"
                 single-line
                 hide-details
+                outlined
             ></v-text-field>
               </v-col>
              
           <v-card-text>
+               <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"
@@ -216,9 +218,3 @@ export default {
     }
 }
 </script>
-<style scoped>
-.btn{
-    position: absolute;
-    right: 0.35rem;
-}
-</style>

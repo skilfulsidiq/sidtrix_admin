@@ -4,9 +4,9 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Students"/>
     <v-card>
           <v-card-title>
+              <page-title   title="Students"/>
               <v-spacer></v-spacer>
                <AddStudentModal  />
           </v-card-title>
@@ -17,10 +17,12 @@
                 label="Search"
                 single-line
                 hide-details
+                outlined
             ></v-text-field>
               </v-col>
              
           <v-card-text>
+             <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"

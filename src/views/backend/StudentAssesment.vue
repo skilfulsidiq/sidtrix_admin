@@ -4,8 +4,8 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Student Assesment"/>
     <v-card>
+         <page-title   title="Student Assesment"/>
           <!-- <v-card-title>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
@@ -20,10 +20,12 @@
                 label="Search"
                 single-line
                 hide-details
+                outlined
             ></v-text-field>
               </v-col>
              
           <v-card-text>
+               <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"
@@ -163,7 +165,7 @@ export default {
           href: 'breadcrumbs_dashboard',
         },
         {
-          text: 'Assesment Type',
+          text: 'Student Assesment',
           disabled: false,
           href: 'breadcrumbs_link_1',
         },
@@ -224,9 +226,4 @@ export default {
     }
 }
 </script>
-<style scoped>
-.btn{
-    position: absolute;
-    right: 0.35rem;
-}
-</style>
+
