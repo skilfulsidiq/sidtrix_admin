@@ -9,9 +9,9 @@
              <page-title   title="Training"/>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
-                elevation="2"
+                elevation="0"
                 color="primary"
-                > <v-icon>mdi-plus</v-icon> Training    </v-btn>
+                > <v-icon>mdi-plus</v-icon> Training </v-btn>
           </v-card-title>
               <v-col cols="12" md="6">
                    <v-text-field

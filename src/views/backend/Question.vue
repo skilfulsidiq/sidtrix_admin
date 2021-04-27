@@ -133,7 +133,7 @@
             <v-card-text>
               <v-text-field label="Question number"></v-text-field>
 
-              <small class="grey--text">* Are you sure you want to add.</small>
+              <small class="primary--text">* Are you sure you want to add.</small>
             </v-card-text>
 
             <v-card-actions>
@@ -157,7 +157,7 @@
             <v-card-text>
               <v-text-field label="Question number"></v-text-field>
 
-              <small class="grey--text">* Are you sure you want to delete.</small>
+              <small class="primary--text">* Are you sure you want to delete.</small>
             </v-card-text>
 
             <v-card-actions>
