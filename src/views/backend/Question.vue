@@ -8,10 +8,11 @@
           <v-card-title>
              <page-title   title="Question"/>
               <v-spacer></v-spacer>
-               <v-btn @click="openStudentModal()"
+              <AddQuestionModal />
+               <!-- <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
-                > <v-icon>mdi-plus</v-icon> Question</v-btn>
+                > <v-icon>mdi-plus</v-icon> Question</v-btn> -->
           </v-card-title>
               <v-col cols="12" md="4">
                    <v-text-field
@@ -186,8 +187,9 @@
 </template>
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
+import AddQuestionModal from '@/components/modals/AddQuestionModal.vue'
 export default {
-  components: { PageTitle },
+  components: { PageTitle, AddQuestionModal },
     name:"Question",
      data () {
       return {

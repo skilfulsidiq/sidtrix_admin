@@ -9,10 +9,12 @@
           <v-card-title>
              <page-title   title="Course Mgt"/>
               <v-spacer></v-spacer>
-               <v-btn @click="openStudentModal()"
+
+              <AddCourseModal />
+               <!-- <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
-                > <v-icon>mdi-plus</v-icon> Course    </v-btn>
+                > <v-icon>mdi-plus</v-icon> Course    </v-btn> -->
           </v-card-title>
               
               <v-col cols="12" md="4">
@@ -189,8 +191,9 @@
 </template>
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
+import AddCourseModal from '@/components/modals/AddCourseModal.vue'
 export default {
-  components: { PageTitle },
+  components: { PageTitle, AddCourseModal },
     name:"Courses",
      data () {
       return {
