@@ -8,10 +8,7 @@
           <v-card-title>
              <page-title   title="Session"/>
               <v-spacer></v-spacer>
-               <v-btn @click="openStudentModal()"
-                elevation="2"
-                color="primary"
-                > <v-icon>mdi-plus</v-icon> Session    </v-btn>
+               <AddSessionModal />
           </v-card-title>
               <v-col cols="12" md="6">
                    <v-text-field
@@ -42,86 +39,9 @@
           </v-card-text>
     </v-card>
 
-      <v-row justify="center">
-            <v-dialog
-            v-model="add_student_modal"
-            persistent
-            max-width="600px"
-            >
+      
             
-            <v-card>
-                <v-card-title>
-                <span class="headline">Add School Session</span>
-                </v-card-title>
-                <v-card-text>
-                <v-container>
-                    <v-row>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        label="Session Name*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        label="year"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        label="Batch*"
-                        required
-                        persistent-hint
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-select outlined
-                        :items="['Active', 'Inactive']"
-                        label="Status*"
-                        required
-                        ></v-select>
-                    </v-col>
-                    
-                    </v-row>
-                </v-container>
-                </v-card-text>
-                <v-card-actions>
-                <v-btn
-                   elevation="2"
-                    color="primary"
-                    text
-                    @click="add_student_modal = false"
-                >
-                    Cancel
-                </v-btn>
-                 <v-spacer></v-spacer>
-                <v-btn
-                    color="primary"
-                    elevation="2"
-                    text
-                    @click="add_student_modal = false"
-                >
-                    Save
-                </v-btn>
-                </v-card-actions>
-            </v-card>
-            </v-dialog>
-        </v-row>
+           
          <v-dialog
           v-model="dialog"
           max-width="500px"
@@ -182,8 +102,9 @@
 </template>
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
+import AddSessionModal from '@/components/modals/AddSessionModal.vue'
 export default {
-  components: { PageTitle },
+  components: { PageTitle, AddSessionModal },
     name:"Session",
      data () {
       return {
