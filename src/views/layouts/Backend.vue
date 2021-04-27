@@ -8,7 +8,8 @@
             <nav-list   v-for="(item,i) in navigation_menu" :key="i"
               :data=" { icon: item.icon, text: item.text,link:item.link,children:item.children, prepend_icon:item.prepend_icon,heading:item.heading }"
             
-             :hasChildren=item.hasChildren :show_heading="item.show_heading" ></nav-list>
+             :hasChildren=item.hasChildren :show_heading="item.show_heading" >
+             </nav-list>
 
           
          

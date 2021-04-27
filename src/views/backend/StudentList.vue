@@ -8,10 +8,7 @@
     <v-card>
           <v-card-title>
               <v-spacer></v-spacer>
-               <v-btn @click="openStudentModal()"
-                elevation="2"
-                color="primary"
-                > <v-icon>mdi-plus</v-icon> Student    </v-btn>
+               <AddStudentModal  />
           </v-card-title>
               <v-col cols="12" md="6">
                    <v-text-field
@@ -44,153 +41,7 @@
 
       <!-- dialog -->
       <v-row justify="center">
-            <v-dialog
-            v-model="add_student_modal"
-            persistent
-            max-width="600px"
-            >
             
-            <v-card>
-                <v-card-title>
-                <span class="headline">Add Student</span>
-                </v-card-title>
-                <v-card-text>
-                <v-container>
-                    <v-row>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        label="First name*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        label="Last name"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        sm="10"
-                        md="12"
-                    >
-                        <v-text-field outlined
-                        label="Address"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                   
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Email*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Password*"
-                        type="password"
-                        ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Phone number*"
-                        type="phone number"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-select outlined
-                        :items="['0-17', '18-29', '30-54', '54+']"
-                        label="Age*"
-                        required
-                        ></v-select>
-                    </v-col>
-                      <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-select outlined
-                        :items="['Male','Female']"
-                        label="Gender*"
-                        required
-                        ></v-select>
-                    </v-col>
-                      <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-select outlined
-                        :items="['Yes','No']"
-                        label="Have Laptop*"
-                        required
-                        ></v-select>
-                    </v-col>
-                      <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-select outlined
-                        :items="['Yes','No']"
-                        label="Have Internet*"
-                        required
-                        ></v-select>
-                    </v-col>
-                      <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-select outlined
-                        :items="['SSCE','OND','HND','BSc','MSc','Phd']"
-                        label="Level Of Education*"
-                        required
-                        ></v-select>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-autocomplete outlined
-                        :items="['Frontend', 'Backend', 'Mobile developer', 'Cloud', 'Cloud Engineer', 'Python', 'Babel', 'Java']"
-                        label="Interests"
-                        multiple
-                        ></v-autocomplete>
-                    </v-col>
-                    </v-row>
-                </v-container>
-                </v-card-text>
-                <v-card-actions>
-                <v-btn
-                   elevation="2"
-                    color="primary"
-                    text
-                    @click="add_student_modal = false"
-                >
-                    Cancel
-                </v-btn>
-                 <v-spacer></v-spacer>
-                <v-btn
-                    color="primary"
-                    elevation="2"
-                    text
-                    @click="add_student_modal = false"
-                >
-                    Save
-                </v-btn>
-                </v-card-actions>
-            </v-card>
-            </v-dialog>
         </v-row>
         <v-dialog
           v-model="dialog"
@@ -252,8 +103,10 @@
 </template>
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
+import AddStudentModal from '@/components/modals/AddStudentModal.vue'
+
 export default {
-  components: { PageTitle },
+  components: { PageTitle, AddStudentModal },
     name:"StudentList",
      data () {
       return {
@@ -277,7 +130,6 @@ export default {
         },
           ],
           search:"",
-          add_student_modal:false,
         headers: [
           {
             text: 'S/N',
@@ -325,9 +177,7 @@ export default {
       }
     },
     methods:{
-        openStudentModal(){
-            this.add_student_modal = !this.showStudentModal
-        },
+      
     }
 }
 </script>
