@@ -41,7 +41,7 @@ export default {
           href: 'breadcrumbs_dashboard',
         },
         {
-          text: 'Students Attendance',
+          text: 'StudentAttendance',
           disabled: false,
           href: 'breadcrumbs_link_1',
         },

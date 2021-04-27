@@ -16,7 +16,8 @@
           </v-card-title>
               
               <v-col cols="12" md="4">
-                   <v-text-field dense class="pl-5"
+                   <v-text-field 
+                dense
                 outlined
                 v-model="search"
                 append-icon="mdi-magnify"
