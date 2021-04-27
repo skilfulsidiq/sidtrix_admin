@@ -4,9 +4,9 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Question"/>
     <v-card>
           <v-card-title>
+             <page-title   title="Question"/>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
                 elevation="2"
@@ -20,10 +20,12 @@
                 label="Search"
                 single-line
                 hide-details
+                outlined
             ></v-text-field>
               </v-col>
              
           <v-card-text>
+             <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"

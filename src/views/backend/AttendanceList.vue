@@ -4,11 +4,10 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Students Attendance"/>
     <v-card>
-             
-             
+       <page-title   title="Students Attendance"/>
           <v-card-text>
+             <v-divider></v-divider>
                <v-data-table
                     :headers="attendance_header"
                     :items="[]"

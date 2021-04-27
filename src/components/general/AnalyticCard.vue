@@ -7,7 +7,7 @@
           <v-icon size="50" color="white">{{icon}}</v-icon>
         </v-list-item-avatar>
         <v-list-item-content>
-          <div class="overline mb-4">{{title}}</div>
+          <div class=" mb-4">{{title}}</div>
           <v-list-item-title class="headline mb-1">{{value}}</v-list-item-title>
           <!-- <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle> -->
         </v-list-item-content>

@@ -4,9 +4,9 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Session"/>
     <v-card>
           <v-card-title>
+             <page-title   title="Session"/>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
                 elevation="2"
@@ -20,10 +20,12 @@
                 label="Search"
                 single-line
                 hide-details
+                outlined
             ></v-text-field>
               </v-col>
              
           <v-card-text>
+             <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"
@@ -49,7 +51,7 @@
             
             <v-card>
                 <v-card-title>
-                <span class="headline">Add Course</span>
+                <span class="headline">Add School Session</span>
                 </v-card-title>
                 <v-card-text>
                 <v-container>
@@ -59,7 +61,7 @@
                         md="6"
                     >
                         <v-text-field outlined
-                        label="Add Course*"
+                        label="Session Name*"
                         required
                         ></v-text-field>
                     </v-col>
@@ -69,8 +71,8 @@
                         md="6"
                     >
                         <v-text-field outlined
-                        label="Course Duration"
-                        hint="1 to 12 weeks"
+                        label="year"
+                        required
                         ></v-text-field>
                     </v-col>
                     <v-col
@@ -79,23 +81,9 @@
                         md="6"
                     >
                         <v-text-field outlined
-                        label="Total topics*"
-                        hint="3 to 12"
+                        label="Batch*"
+                        required
                         persistent-hint
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Status*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Password*"
-                        type="password"
-                        required
                         ></v-text-field>
                     </v-col>
                     <v-col
@@ -103,21 +91,12 @@
                         md="6"
                     >
                         <v-select outlined
-                        :items="['0-17', '18-29', '30-54', '54+']"
-                        label="Age*"
+                        :items="['Active', 'Inactive']"
+                        label="Status*"
                         required
                         ></v-select>
                     </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-autocomplete outlined
-                        :items="['JAVASCRIPT', 'CSS', 'BOOTSTRAP', 'TAILWIN', 'GIT', 'HTML', 'VUE', 'REACT']"
-                        label="Interests"
-                        multiple
-                        ></v-autocomplete>
-                    </v-col>
+                    
                     </v-row>
                 </v-container>
                 </v-card-text>
@@ -151,7 +130,7 @@
             <v-card-text>
               <v-text-field label="Student name"></v-text-field>
 
-              <small class="grey--text">* Are you sure you want to add.</small>
+              <big class="grey--text"><strong>* Are you sure you want to add.</strong></big>
             </v-card-text>
 
             <v-card-actions>
@@ -175,7 +154,7 @@
             <v-card-text>
               <v-text-field label="Student name"></v-text-field>
 
-              <small class="grey--text">* Are you sure you want to delete.</small>
+              <big class="grey--text"><strong>* Are you sure you want to delete.</strong></big>
             </v-card-text>
 
             <v-card-actions>

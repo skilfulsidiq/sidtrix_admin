@@ -4,110 +4,20 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
-    <page-title   title="Course Mgt"/>
     <v-card>
-          <!-- <v-card-title>
+          <v-card-title>
+             <page-title   title="Course Mgt"/>
               <v-spacer></v-spacer>
                <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
                 > <v-icon>mdi-plus</v-icon> Course    </v-btn>
-          </v-card-title> -->
-              <div class="container">
-                        <v-card-title>
-                        <v-spacer></v-spacer>
-                            <v-btn
-                            color="primary"
-                            elevation="2"
-                            @click="openDialog()"
-                            >
-                            <v-icon>mdi-plus</v-icon>Open Dialog
-                            </v-btn>
-                        </v-card-title>
-                        <v-col cols="12" md="6">
-                        <!-- <v-text-field
-                        append-icon="mdi-magnify"
-                        hide-details
-                        ></v-text-field> -->
-                        </v-col>
-                    <!----------dialog--------------->
-                        <v-row justify="center">
-                        <v-dialog 
-                        v-model="dialog"
-                        persistent
-                        width="800px"
-                        >
-                        <v-card>
-                        <v-card-title>
-                            <span class="headline">Open Dialog</span>
-                        </v-card-title>
-                        <v-card-actions>
-                            <v-spacer></v-spacer>
-                            <v-btn
-                                color="blue darken-1"
-                                text
-                                @click="dialog = false"
-                            >
-                                Close
-                            </v-btn>
-                        </v-card-actions>
-                        <v-card-text>
-                            <v-container>
-                            <v-row>
-                                <v-col 
-                                cols="12"
-                                md="6">
-                                    <v-text-field
-                                    label="Course Name*"
-                                    required
-                                    ></v-text-field>
-                                </v-col>
-                                <v-col
-                                    cols="12"
-                                    sm="6"
-                                    md="4"
-                                >
-                                    <v-text-field
-                                    label="Course Duration"
-                                    hint="example of helper text only on focus"
-                                    ></v-text-field>
-                                </v-col>
-                                <v-col cols="12">
-                                    <v-text-field
-                                    label="Total Topics*"
-                                    type="number"
-                                    required
-                                    ></v-text-field>
-                                </v-col>
-                                <v-col
-                                    cols="12"
-                                    sm="6"
-                                >
-                                    <v-select
-                                    :items="['0-17', '18-29', '30-54', '54+']"
-                                    label="Status*"
-                                    required
-                                    ></v-select>
-                                </v-col>
-                                </v-row>
-                            </v-container>
-                            </v-card-text>
-                            <v-card-actions>
-                            <v-spacer></v-spacer>
-                            <v-btn
-                                color="blue darken-1"
-                                text
-                                @click="dialog = false"
-                            >
-                                Save
-                            </v-btn>
-                            </v-card-actions>
-                        </v-card>
-                        </v-dialog>
-                    </v-row>
-              </div>   
+                
+          </v-card-title>
+              
               <v-col cols="12" md="6">
                    <v-text-field
+                outlined
                 v-model="search"
                 append-icon="mdi-magnify"
                 label="Search"
@@ -117,6 +27,7 @@
               </v-col>
              
           <v-card-text>
+            <v-divider></v-divider>
                <v-data-table
                     :headers="headers"
                     :items="desserts"
@@ -126,15 +37,12 @@
                 
                     <template v-slot:item.action="{ item }">
                             <v-btn icon > <v-icon color="primary">mdi-check</v-icon> </v-btn>
-                            <v-btn icon > <v-icon color="green">mdi-pencil</v-icon> </v-btn>
-                            <v-btn icon > <v-icon color="red">mdi-delete</v-icon> </v-btn>
+                            <v-btn icon > <v-icon color="green" @click="dialog = !dialog">mdi-pencil</v-icon> </v-btn>
+                            <v-btn icon > <v-icon color="red"  @click="Showdialog = !Showdialog">mdi-delete</v-icon> </v-btn>
                     </template>
                 </v-data-table>
           </v-card-text>
     </v-card>
-
-
-      <!-- dialog
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"
@@ -154,7 +62,7 @@
                         md="6"
                     >
                         <v-text-field outlined
-                        label="Add Course*"
+                        label="Course Name*"
                         required
                         ></v-text-field>
                     </v-col>
@@ -180,39 +88,18 @@
                         required
                         ></v-text-field>
                     </v-col>
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Status*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                        <v-text-field outlined
-                        label="Password*"
-                        type="password"
-                        required
-                        ></v-text-field>
-                    </v-col>
+                    
                     <v-col
                         cols="12"
                         md="6"
                     >
                         <v-select outlined
-                        :items="['0-17', '18-29', '30-54', '54+']"
-                        label="Age*"
-                        required
+                        :items="['Skillfulsidiq', '100%', 'Abdulazeez', 'Wassmistic']"
+                        label="Course Instructor*"
+                        multiple
                         ></v-select>
                     </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                        <v-autocomplete outlined
-                        :items="['JAVASCRIPT', 'CSS', 'BOOTSTRAP', 'TAILWIN', 'GIT', 'HTML', 'VUE', 'REACT']"
-                        label="Interests"
-                        multiple
-                        ></v-autocomplete>
-                    </v-col>
+                   
                     </v-row>
                 </v-container>
                 </v-card-text>
@@ -237,7 +124,61 @@
                 </v-card-actions>
             </v-card>
             </v-dialog>
-        </v-row> -->
+        </v-row>
+         <!-- <v-dialog
+          v-model="dialog"
+          max-width="500px"
+        >
+          <v-card >
+            <v-card-text>
+              <v-text-field label="Student name"></v-text-field>
+
+              <big class="grey--text"><strong>* Are you sure you want to add.</strong></big>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn
+                text
+                color="primary"
+                @click="dialog = false"
+              >
+                Add
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+        <v-dialog
+          v-model="Showdialog"
+          max-width="500px"
+        >
+          <v-card >
+            <v-card-text>
+              <v-text-field label="Student name"></v-text-field>
+
+              <big class="grey--text"><strong>* Are you sure you want to delete.</strong></big>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                text
+                color="primary"
+                @click="Showdialog = false"
+              >
+                No
+              </v-btn>
+              <v-btn
+                text
+                color="primary"
+                @click="Showdialog = false"
+              >
+                yes
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog> -->
 </div>
       
 
