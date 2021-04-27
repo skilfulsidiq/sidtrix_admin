@@ -4,6 +4,7 @@
       :items="breadcrumb"
       divider="-"
     ></v-breadcrumbs>
+   
     <v-card>
           <v-card-title>
              <page-title   title="Course Mgt"/>
@@ -12,11 +13,10 @@
                 elevation="2"
                 color="primary"
                 > <v-icon>mdi-plus</v-icon> Course    </v-btn>
-                
           </v-card-title>
               
-              <v-col cols="12" md="6">
-                   <v-text-field
+              <v-col cols="12" md="4">
+                   <v-text-field dense class="pl-5"
                 outlined
                 v-model="search"
                 append-icon="mdi-magnify"
@@ -43,6 +43,9 @@
                 </v-data-table>
           </v-card-text>
     </v-card>
+
+ 
+      
       <v-row justify="center">
             <v-dialog
             v-model="add_student_modal"

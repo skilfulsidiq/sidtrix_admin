@@ -5,31 +5,11 @@
       v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>    
       <v-list dense>
          <!-- for testing -->
-          <nav-list :data=" { icon: 'mdi-home', text: 'Dashboard',link:'home' }"></nav-list>
+            <nav-list   v-for="(item,i) in navigation_menu" :key="i"
+              :data=" { icon: item.icon, text: item.text,link:item.link,children:item.children, prepend_icon:item.prepend_icon,heading:item.heading }"
+            
+             :hasChildren=item.hasChildren :show_heading="item.show_heading" ></nav-list>
 
-          <nav-list :data=" { icon: 'mdi-people', text: 'Students',link:'students' }"></nav-list>
-          
-          <nav-list :data=" { icon: 'mdi-people', text: 'StudentAssesment',link:'studentassesment' }"></nav-list>
-
-          <nav-list :data=" { icon: 'mdi-people', text: 'StudentCourse',link:'studentcourse' }"></nav-list>
-
-          <nav-list :data=" { icon: 'mdi-people', text: 'Session',link:'session' }"></nav-list>
-
-          <nav-list :data=" { icon: 'mdi-people', text: 'Attendance',link:'attendance' }"></nav-list>
-
-          <nav-list :data=" { icon: 'mdi-people', text: 'Assesment',link:'assesment' }"></nav-list>
-
-          <nav-list :data=" { icon: 'mdi-people', text: 'AssesmentType',link:'assesmentType' }"></nav-list>
-          
-          <nav-list :data=" { icon: 'mdi-people', text: 'Courses',link:'course' }"></nav-list>
-          
-          <nav-list :data=" { icon: 'mdi-people', text: 'Payment',link:'payment' }"></nav-list>
-
-          <nav-list :data=" { icon: 'mdi-people', text: 'Question',link:'question' }"></nav-list>
-         
-          <nav-list :data=" { icon: 'mdi-people', text: 'Topic',link:'topic' }"></nav-list>
-         
-          <nav-list :data=" { icon: 'mdi-people', text: 'Training',link:'training' }"></nav-list>
           
          
 
@@ -54,10 +34,10 @@
           ></v-text-field> -->
          
       <v-spacer />
-      <v-spacer />
+      <!-- <v-spacer /> -->
       <template >
           <!-- <div class="padme_ho" style="border-right:1px solid #f2f2f2;"> -->
-              <v-toolbar-title
+      <v-toolbar-title
         style="width: 150px;border-right:1px solid #f2f2f2; text-align:center"
         class="ml-0 padme_ho"
       >
@@ -66,7 +46,7 @@
       </v-toolbar-title>
           <!-- </div> -->
         <!-- <v-spacer></v-spacer> -->
-        <avatar />
+        <avatar :menu="user_menu"/>
           
       </template>
         <!-- <v-img alt="Newhomes" class="shrink mr-2"  contain  src="../../assets/logo.png" width="100px" height="20px" /> -->
@@ -82,7 +62,7 @@
 
     </v-app-bar>
     <v-main>
-       <v-container
+       <v-container class="mycontainer"
       > 
         <router-view></router-view>
       </v-container> 
@@ -190,24 +170,58 @@ import {loadingMixin} from '../../mixins/Loading'
       drawer: null,
       sampe_img_link:'https://www.google.com/search?biw=1600&bih=718&tbm=isch&sxsrf=ACYBGNSiTf7T5CMkwbDOiLQbKcH6KQluyA%3A1579861007453&sa=1&ei=D8QqXoOpG6TuxgOHg5HICQ&q=firsttrust+logo+mortgage#',
         user_menu: [
-        { title: 'Profile',icon:'mdi-account',link:'profile' },
+        { title: 'Profile',icon:'mdi-account-tie-outline',link:'profile' },
         { title: 'Sign Out',icon:'mdi-logout',link:'logout' }
       ],
       navigation_menu: [
         { icon: 'mdi-home', text: 'Dashboard',link:'home' },
-        // { icon: 'mdi-box', text: 'Mortgages' ,link:'mortgage'},
-        // { icon: 'mdi-content-copy', text: 'Duplicates',link:'do' },
-         {
-          icon: 'mdi-chevron-up',
-          'icon-alt': 'mdi-file-multiple-outline',
-          text: 'Mortgages',
+     
+        {
+          icon: 'mdi-account-group',
+          'icon-alt': 'mdi-chevron-up',
+          text: 'Students',
           model: false,
+          prepend_icon:'mdi-chevron-down',
+          hasChildren:true,
           children: [
-            { icon: 'mdi-file-outline', text: 'Regular',link:'regular_mortgage' },
-            { icon: 'mdi-file-outline', text: 'NHF',link:'nhf_mortgage' },
+            { icon: 'mdi-file-outline', text: 'All Students',link:'students' },
+            { icon: 'mdi-file-outline', text: 'Student Assessment',link:'studentassesment' },
+            { icon: 'mdi-people', text: 'StudentCourse',link:'studentcourse' }
           ],
-        },
-         { icon: 'mdi-account-group', text: 'Staff',link:'staff' },
+          },
+        {
+          icon: 'mdi-book',
+          'icon-alt': 'mdi-users',
+            text: 'Assessments',
+            prepend_icon:'mdi-chevron-down',
+            model: false,
+             hasChildren:true,
+          children: [
+            { icon: 'mdi-file-outline', text: 'All Assessments',link:'assesment' },
+            { icon: 'mdi-file-outline', text: 'Assessment Type',link:'assesmentType' },
+            { icon: 'mdi-head-question-outline', text: 'Question',link:'question' },
+          ],
+          },
+           {
+          icon: 'mdi-school-outline',
+          'icon-alt': 'mdi-users',
+            text: 'Course',
+            prepend_icon:'mdi-chevron-down',
+            model: false,
+             hasChildren:true,
+          children: [
+            { icon: 'mdi-school-outline', text: 'Courses',link:'course' },
+            { icon: 'mdi-text-subject', text: 'Topic',link:'topic' },
+            // { icon: 'mdi-people', text: 'Question',link:'question' },
+          ],
+          },
+          { icon: 'mdi-check', text: 'Attendance',link:'attendance' },
+          { icon: 'mdi-watermark', text: 'Session',link:'session' },
+         
+          
+          { icon: 'mdi-credit-card-check', text: 'Payment',link:'payment' },
+          
+           { icon: 'mdi-account-supervisor-outline', text: 'Training',link:'training' }
    
       ],
     }),

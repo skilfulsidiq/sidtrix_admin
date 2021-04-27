@@ -15,6 +15,9 @@
         <v-list-group v-if="hasChildren"
             :prepend-icon="data.model ? data.icon : data['icon-alt']" append-icon="" active-class="highlighted">
             <template v-slot:activator>
+                <v-list-item-action>
+              <v-icon :class="data.link === $route.name ? 'text-highlighted' : ''">{{data.icon}}</v-icon>
+            </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>
                       {{data.text}}
