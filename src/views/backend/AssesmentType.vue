@@ -13,9 +13,10 @@
                 color="primary"
                 > <v-icon>mdi-plus</v-icon> Course    </v-btn>
           </v-card-title> -->
-              <v-col cols="12" md="6">
+              <v-col cols="12" md="4">
                    <v-text-field
                 outlined
+                dense
                 v-model="search"
                 append-icon="mdi-magnify"
                 label="Search"

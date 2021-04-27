@@ -10,7 +10,7 @@
               <v-spacer></v-spacer>
                <AddSessionModal />
           </v-card-title>
-              <v-col cols="12" md="6">
+              <v-col cols="12" md="4">
                    <v-text-field
                 v-model="search"
                 append-icon="mdi-magnify"
@@ -18,6 +18,7 @@
                 single-line
                 hide-details
                 outlined
+                dense
             ></v-text-field>
               </v-col>
              

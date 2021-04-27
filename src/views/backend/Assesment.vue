@@ -8,14 +8,16 @@
           <v-card-title>
               <page-title   title="Assesment"/>
               <v-spacer></v-spacer>
-               <v-btn @click="openStudentModal()"
+              <AddAssesmentModal />
+               <!-- <v-btn @click="openStudentModal()"
                 elevation="2"
                 color="primary"
-                > <v-icon>mdi-plus</v-icon> Assessment</v-btn>
+                > <v-icon>mdi-plus</v-icon> Assessment</v-btn> -->
           </v-card-title>
-              <v-col cols="12" md="6">
+              <v-col cols="12" md="4">
                    <v-text-field
-                   outlined
+                outlined
+                dense
                 v-model="search"
                 append-icon="mdi-magnify"
                 label="Search"
@@ -191,8 +193,9 @@
 </template>
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
+import AddAssesmentModal from '@/components/modals/AddAssesmentModal.vue'
 export default {
-  components: { PageTitle },
+  components: { PageTitle, AddAssesmentModal },
     name:"Assesment",
      data () {
       return {

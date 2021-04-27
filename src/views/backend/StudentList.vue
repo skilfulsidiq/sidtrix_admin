@@ -10,7 +10,7 @@
               <v-spacer></v-spacer>
                <AddStudentModal  />
           </v-card-title>
-              <v-col cols="12" md="6">
+              <v-col cols="12" md="4">
                    <v-text-field
                 v-model="search"
                 elevation="0"
@@ -19,6 +19,7 @@
                 single-line
                 hide-details
                 outlined
+                dense
             ></v-text-field>
               </v-col>
              
