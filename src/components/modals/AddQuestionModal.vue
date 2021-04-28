@@ -87,6 +87,7 @@
 </template>
 <script>
 import {formMixin} from '@/mixins/form.js'
+import EventBus from '@/services/event.js';
 export default {
     name:"AddQuestionModal",
     props:{},
@@ -114,6 +115,12 @@ export default {
             }
             console.log(this.form);
         }
+        
+    },
+       created(){
+        EventBus.$on('openStudentModal',(v)=>{
+            this.add_student_modal = v;
+        })
     }
 }
 </script>

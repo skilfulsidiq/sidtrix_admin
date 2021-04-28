@@ -34,7 +34,7 @@
                     <template v-slot:item.action="{ item }">
                             <v-btn icon > <v-icon color="primary">mdi-check</v-icon> </v-btn>
                             
-                            <v-btn icon>   <v-icon color="green"  @click="dialog = !dialog">mdi-pencil</v-icon> </v-btn>
+                            <v-btn icon>   <v-icon color="green"  @click="openStudentModal">mdi-pencil</v-icon> </v-btn>
                             <v-btn icon > <v-icon color="red"  @click="Showdialog = !Showdialog">mdi-delete</v-icon> </v-btn>
                     </template>
                 </v-data-table>
@@ -107,6 +107,7 @@
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
 import AddStudentModal from '@/components/modals/AddStudentModal.vue'
+import EventBus from '@/services/event.js';
 
 export default {
   components: { PageTitle, AddStudentModal },
@@ -180,7 +181,9 @@ export default {
       }
     },
     methods:{
-      
+      openStudentModal(){
+        EventBus.$emit('openStudentModal',true);
+      }
     }
 }
 </script>

@@ -95,6 +95,7 @@
 </template>
 <script>
 import {formMixin} from '@/mixins/form.js'
+import EventBus from '@/services/event.js';
 export default {
     name:"AddAssesmentModal",
     props:{},
@@ -121,8 +122,14 @@ export default {
             if(!this.$refs.studentform.validate()){
                 return;
             }
+            
             console.log(this.form);
         }
+    },
+       created(){
+        EventBus.$on('openStudentModal',(v)=>{
+            this.add_student_modal = v;
+        })
     }
 }
 </script>
