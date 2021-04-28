@@ -103,11 +103,7 @@
 </template>
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
-<<<<<<< HEAD
-import EventBus from '@/services/event.js';
-=======
 import AddTrainingModal from '@/components/modals/AddTrainingModal.vue'
->>>>>>> 2924f8abcd82c75a72c3cf5aa87a2df3207b74b1
 export default {
    components: { PageTitle, AddTrainingModal },
   
@@ -196,13 +192,7 @@ export default {
       }
     },
     methods:{
-<<<<<<< HEAD
-       openStudentModal(){
-        EventBus.$emit('openStudentModal',true);
-      }
-=======
        
->>>>>>> 2924f8abcd82c75a72c3cf5aa87a2df3207b74b1
     }
 }
 </script>
