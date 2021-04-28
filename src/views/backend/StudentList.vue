@@ -13,6 +13,7 @@
               <v-col cols="12" md="4">
                    <v-text-field
                 v-model="search"
+                elevation="0"
                 append-icon="mdi-magnify"
                 label="Search"
                 single-line

@@ -8,10 +8,7 @@
           <v-card-title>
              <page-title   title="Training"/>
               <v-spacer></v-spacer>
-               <v-btn @click="openStudentModal()"
-                elevation="0"
-                color="primary"
-                > <v-icon>mdi-plus</v-icon> Training </v-btn>
+               <AddTrainingModal />
           </v-card-title>
               <v-col cols="12" md="4">
                    <v-text-field
@@ -43,117 +40,9 @@
           </v-card-text>
     </v-card>
 
-      <v-row justify="center">
-            <v-dialog
-            v-model="add_student_modal"
-            persistent
-            max-width="600px"
-            >
+      
             
-            <v-card>
-                <v-card-title>
-                <span class="headline">Training Form</span>
-                </v-card-title>
-                <v-card-text>
-                <v-container>
-                    <v-row>
-                       <v-col
-                        cols="12"
-                        sm="6"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        :items="['Active', 'Inactive']"
-                        label="School Session"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                       <v-col
-                        cols="12"
-                        sm="6"
-                        md="6"
-                    >
-                        <v-text-field outlined
-                        :items="['Active', 'Inactive']"
-                        label="Status"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                       <v-text-field outlined
-                       
-                        label="Training Name*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                       <v-text-field outlined
-                       type="number"
-                        label="Days*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                       <v-text-field outlined
-                       type="number"
-                        label="Weeks*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                       <v-text-field outlined
-                       type="number"
-                        label="Hours*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        md="6"
-                    >
-                       <v-text-field outlined
-                       type="number"
-                        label="Total Students*"
-                        required
-                        ></v-text-field>
-                    </v-col>
-                    </v-row>
-                </v-container>
-                </v-card-text>
-                <v-card-actions>
-                <v-btn
-                   elevation="2"
-                    color="primary"
-                    text
-                    @click="add_student_modal = false"
-                >
-                    Cancel
-                </v-btn>
-                 <v-spacer></v-spacer>
-                <v-btn
-                    color="primary"
-                    elevation="2"
-                    text
-                    @click="add_student_modal = false"
-                >
-                    Save
-                </v-btn>
-                </v-card-actions>
-            </v-card>
-            </v-dialog>
-        </v-row>
+            
          <v-dialog
           v-model="dialog"
           max-width="500px"
@@ -214,9 +103,14 @@
 </template>
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
+<<<<<<< HEAD
 import EventBus from '@/services/event.js';
+=======
+import AddTrainingModal from '@/components/modals/AddTrainingModal.vue'
+>>>>>>> 2924f8abcd82c75a72c3cf5aa87a2df3207b74b1
 export default {
-  components: { PageTitle },
+   components: { PageTitle, AddTrainingModal },
+  
     name:"Training",
      data () {
       return {
@@ -302,9 +196,13 @@ export default {
       }
     },
     methods:{
+<<<<<<< HEAD
        openStudentModal(){
         EventBus.$emit('openStudentModal',true);
       }
+=======
+       
+>>>>>>> 2924f8abcd82c75a72c3cf5aa87a2df3207b74b1
     }
 }
 </script>
