@@ -103,11 +103,7 @@
 </template>
 <script>
 import PageTitle from '../../components/general/PageTitle.vue'
-<<<<<<< HEAD
-import EventBus from '@/services/event.js';
-=======
 import AddSessionModal from '@/components/modals/AddSessionModal.vue'
->>>>>>> 2924f8abcd82c75a72c3cf5aa87a2df3207b74b1
 export default {
   components: { PageTitle, AddSessionModal },
     name:"Session",
