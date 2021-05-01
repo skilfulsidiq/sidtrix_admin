@@ -71,17 +71,21 @@
                 <v-btn
                    elevation="2"
                     color="primary"
+                    width="160px" 
+                    height="50px"
                     text
                     @click="add_student_modal = false"
                 >
                     Cancel
                 </v-btn>
                  <v-spacer></v-spacer>
-                <v-btn width:200 type="submit"
+                <v-btn width="160px" 
+                    height="50px" 
+                    type="submit"
                     color="primary"
-                    elevation="2"
                     text
-              
+                    elevation="2"
+
                 >
                     Save
                 </v-btn>

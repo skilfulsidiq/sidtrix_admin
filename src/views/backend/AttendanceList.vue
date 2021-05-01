@@ -5,35 +5,116 @@
       divider="-"
     ></v-breadcrumbs>
     <v-card>
-       <page-title   title="Students Attendance"/>
+          <v-card-title>
+              <page-title   title="Attendance"/>
+              <v-spacer></v-spacer>
+               <AddAttendanceModal  />
+          </v-card-title>
+              <v-col cols="12" md="4">
+                   <v-text-field
+                v-model="search"
+                elevation="0"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+                outlined
+                dense
+            ></v-text-field>
+              </v-col>
+             
           <v-card-text>
              <v-divider></v-divider>
                <v-data-table
-                    :headers="attendance_header"
-                    :items="[]"
+                    :headers="headers"
+                    :items="desserts"
                     :search="search"
                     :items-per-page="5"
                 >
                 
                     <template v-slot:item.action="{ item }">
-                            <v-btn icon > <v-icon color="primary">mdi-check</v-icon> </v-btn>
-                            <v-btn icon > <v-icon color="green">mdi-pencil</v-icon> </v-btn>
-                            <v-btn icon > <v-icon color="red">mdi-delete</v-icon> </v-btn>
+                            <v-btn icon > <v-icon color="primary"  @click="openStudentModal">mdi-check</v-icon> </v-btn>
+                            <v-btn icon > <v-icon color="red"  @click="Showdialog = !Showdialog">mdi-close</v-icon> </v-btn>
                     </template>
                 </v-data-table>
           </v-card-text>
     </v-card>
 
 
+      <!-- dialog -->
+      <v-row justify="center">
+            
+        </v-row>
+        <v-dialog
+          v-model="dialog"
+          max-width="500px"
+        >
+          <v-card >
+            <v-card-text>
+              <v-text-field label="Student name"></v-text-field>
+
+              <big class="grey--text"><strong>* Are you sure you want to add.</strong></big>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn
+                text
+                color="primary"
+                @click="dialog = false"
+              >
+                Add
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+        <v-dialog
+          v-model="Showdialog"
+          max-width="500px"
+        >
+          <v-card >
+            <v-card-text>
+              <v-text-field label="Student name"></v-text-field>
+
+              <big class="grey--text"><strong>* Are you sure you want to delete.</strong></big>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                text
+                color="primary"
+                @click="Showdialog = false"
+              >
+                No
+              </v-btn>
+              <v-btn
+                text
+                color="primary"
+                @click="Showdialog = false"
+              >
+                yes
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
 </div>
       
 
 </template>
 <script>
+import PageTitle from '../../components/general/PageTitle.vue'
+import AddAttendanceModal from '@/components/modals/AddAttendanceModal.vue'
+import EventBus from '@/services/event.js';
+
 export default {
-    name:"StudentList",
+  components: { PageTitle, AddAttendanceModal },
+    name:"AttendanceList",
      data () {
       return {
+        dialog: false,
+        Showdialog: false,
           breadcrumb:[
               {
           text: 'Dashboard',
@@ -41,7 +122,7 @@ export default {
           href: 'breadcrumbs_dashboard',
         },
         {
-          text: 'StudentAttendance',
+          text: 'Attendance',
           disabled: false,
           href: 'breadcrumbs_link_1',
         },
@@ -54,139 +135,46 @@ export default {
           search:"",
         headers: [
           {
-            text: 'First Week',
+            text: 'S/N',
             align: 'start',
             sortable: false,
             value: 'name',
           },
-          { text: 'Calories', value: 'calories' },
-          { text: 'Fat (g)', value: 'fat' },
-          { text: 'Carbs (g)', value: 'carbs' },
-          { text: 'Protein (g)', value: 'protein' },
-          { text: 'oil (g)', value: 'oil' },
-          { text: 'Iron (%)', value: 'iron' },
-          { text: 'Action',value:"action" },
+          { text: 'Student Name', value: 'student_name' },
+          { text: 'Week 1',  value:"action" },
+          { text: 'Week 2',  value:"action" },
+          { text: 'Week 3',  value:"action" },
+          { text: 'Week 4',  value:"action" },
+          { text: 'Week 5',  value:"action" },
+          { text: 'Week 6', value:"action" },
+          { text: 'Week 7', value:"action" },
+          { text: 'Week 8', value:"action" },
+          { text: 'Week 9', value:"action" },
+          { text: 'Week 10', value:"action" },
+          { text: 'Week 11', value:"action" },
+          { text: 'Week 12', value:"action" },
+          // { text: 'Action',value:"action" },
         ],
         desserts: [
           {
-            name: 'Frozen Yogurt',
-            calories: 159,
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-              oil: 5.9,
-            iron: '1%',
-          },
-          {
-            name: 'Ice cream sandwich',
-            calories: 237,
-            fat: 9.0,
-            carbs: 37,
-            protein: 4.3,
-              oil: 4.9,
-            iron: '1%',
-          },
-          {
-            name: 'Eclair',
-            calories: 262,
-            fat: 16.0,
-            carbs: 23,
-            protein: 6.0,
-              oil: 2.9,
-            iron: '7%',
-          },
-          {
-            name: 'Cupcake',
-            calories: 305,
-            fat: 3.7,
-            carbs: 67,
-            protein: 4.3,
-              oil: 1.9,
-            iron: '8%',
-          },
-          {
-            name: 'Gingerbread',
-            calories: 356,
-            fat: 16.0,
-            carbs: 49,
-            protein: 3.9,
-              oil: 3.3,
-            iron: '16%',
-          },
-          {
-            name: 'Jelly bean',
-            calories: 375,
-            fat: 0.0,
-            carbs: 94,
-            protein: 0.0,
-              oil: 2.2,
-            iron: '0%',
-          },
-          {
-            name: 'Lollipop',
-            calories: 392,
-            fat: 0.2,
-            carbs: 98,
-            protein: 0,
-              oil: 3.8,
-            iron: '2%',
-          },
-          {
-            name: 'Honeycomb',
-            calories: 408,
-            fat: 3.2,
-            carbs: 87,
-            protein: 6.5,
-              oil: 1.0,
-            iron: '45%',
-          },
-          {
-            name: 'Donut',
-            calories: 452,
-            fat: 25.0,
-            carbs: 51,
-            protein: 4.9,
-              oil: 2.4,
-            iron: '22%',
+            name:'1',
+            student_name: 'Tajudeen Sulaimon',
           },
            {
-            name: 'Donut',
-            calories: 452,
-            fat: 25.0,
-            carbs: 51,
-            protein: 4.9,
-             oil: 4.3,
-            iron: '22%',
+            name: '2',
+            student_name: 'Adeola Jimoh',
           },
           {
-            name: 'KitKat',
-            calories: 518,
-            fat: 26.0,
-            carbs: 65,
-            protein: 7,
-              oil: 4.9,
-            iron: '6%',
+            name: '3',
+            student_name: 'Afolabi Wasiu',
           },
         ],
       }
     },
-    computed:{
-      attendance_header : function(){
-        let total = 12;
-        let list = [];
-        for(let i=0; i<=total;i++){
-          let name =  {text: i+1+" Week",
-            align: 'start',
-            sortable: false,
-            value: i+1+" Week" };
-            list.push(name);
-      }
-    }
-    },
     methods:{
-        openStudentModal(){
-            this.add_student_modal = !this.showStudentModal
-        }
+      openStudentModal(){
+        EventBus.$emit('openStudentModal',true);
+      }
     }
 }
 </script>
